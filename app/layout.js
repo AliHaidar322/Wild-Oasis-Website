@@ -9,9 +9,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Logo />
-        <Navigation />
-        {children}
+        <header>
+          <Logo />
+          <Navigation />
+        </header>
+        <main>
+          {children}
+        </main>
+        <footer>Wild Oasis Copyright</footer>
       </body>
     </html>
   );
