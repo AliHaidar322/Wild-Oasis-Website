@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import { UsersIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
+import { getCabin } from '../_lib/data-service';
+
+export async function generateMetadate({ params }) {
+  const { name } = await getCabin(params.cabinId);
+  return { title: `Cabin ${name}`};
+}
 
 function CabinCard({ cabin }) {
   const { id, name, max_capacity, regular_price, discount, image } = cabin;
